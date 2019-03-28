@@ -146,7 +146,11 @@ abstract class Installer
             ' --name=jupyter-php-instance ' .
             ' --type=project ' .
             ' --working-dir="' . $pkgsDir . '" ' .
-            ' --require=litipk/jupyter-php=0.* '
+            ' --require=litipk/jupyter-php=dev-master ' .
+            " --repository='" . json_encode([
+                "type" => "vcs",
+                "url"  => "https://github.com/wagdanylo/Jupyter-PHP.git"
+            ]) . "'"
         );
 
         return ($silent)
